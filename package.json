@@ -1,25 +1,37 @@
 {
   "name": "confusion",
   "version": "1.0.0",
-  "description": "This is a website for Ristorante Con Fusion",
-  "main": "index.html",
+  "description": "\"This is a website for Restorant Con Fusion\"",
+  "main": "index.js",
   "scripts": {
-    "start": "npm run lite",
+    "start": "npm run watch:all",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lite": "lite-server"
-    "scss": "node-sass -o css/ css/"
+    "lite": "lite-server",
+    "scss": "node-sass -o css/ css/",
+    "watch:scss": "onchange \"css/*.scss\" -- npm run scss",
+    "watch:all": "parallelshell \"npm run watch:scss\" \"npm run lite\""
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanjanadalvi/conFusion.git"
+  },
+  "author": "sanjana",
   "license": "ISC",
-  "devDependencies": {
-    "lite-server": "^2.3.0"
-    "node-saas": "^4.7.2"
+  "bugs": {
+    "url": "https://github.com/sanjanadalvi/conFusion/issues"
   },
+  "homepage": "https://github.com/sanjanadalvi/conFusion#readme",
   "dependencies": {
-    "bootstrap": "^4.0.0",
+    "bootstrap": "^4.5.0",
     "bootstrap-social": "^5.1.1",
     "font-awesome": "^4.7.0",
-    "jquery": "^3.3.1",
-    "popper.js": "^1.12.9"
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1"
+  },
+  "devDependencies": {
+    "lite-server": "^2.5.4",
+    "node-sass": "^4.14.1",
+    "onchange": "^7.0.2",
+    "parallelshell": "^3.0.1"
   }
 }
